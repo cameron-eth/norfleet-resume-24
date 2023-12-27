@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Cameron Norfleet</title>
+
+    <!-- Add modal styles (you can customize this further) -->
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 900;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+
+    <div class="bg-black">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-3xl sm:mb-12 lg:mb-12 lg:px-8">
+            <div>
+                <h2 class="font-bold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-indigo-200 to-pink-600">Cameron's</h2>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl lg:item">Technical Specifications</h2>
+                <p class="mt-4 text-gray-500">Current Data Analytics Student @ San Jose State University, with explicit
+                    interest in Software Engineering, Product Design, Data, & UX/UI </p>
+                <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-200 hover:text-yellow-300">Work Experience</dt>
+                        <dd class="mt-2 text-sm text-gray-500">
+                            <span class="text-blue-200 underline hover:text-yellow-300 role"
+                                data-content="As a Software Engineering Intern at Fingenic, I worked on various aspects of software development, gaining hands-on experience in building and maintaining software solutions. I collaborated with a dynamic team to contribute to the development of innovative features, conducted code reviews, and participated in agile development processes. This role allowed me to deepen my understanding of technologies such as Next.js, React.js, and Node.js, fostering my growth as a versatile and collaborative software engineer.">Software Engineering
+                                Intern</span>,
+                            Fingenic. <br>
+                            <span class="underline text-blue-200 hover:text-yellow-300 role"
+                                data-content="During my time as a UX/UI Intern at Runway Supply, I immersed myself in the world of user experience and interface design. I played a crucial role in crafting intuitive and visually appealing designs for digital products. Collaborating closely with cross-functional teams, I conducted user research, created wireframes and prototypes, and iteratively refined designs based on user feedback. This internship provided me with valuable insights into the intersection of design and user psychology, enhancing my skills in creating engaging and user-centric experiences.">UX/UI Intern</span>, Runway Supply. </dd>
+                        <br>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-100 hover:text-yellow-300">Technologies</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Next.js, Javascript, Tailwindcss, React.js,
+                            Typescript, Python, Node.js, Kaggle, SQL, Postgres</dd>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-100 hover:text-yellow-300">Interests</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Machine Learning, Neural Networks, UX Design, Product
+                            Development, Data Science, Software Engineering</dd>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt
+                            class="font-medium text-transparent text-md bg-clip-text bg-gradient-to-r from-indigo-200 to-pink-600 ">
+                            Hommefleur</dt>
+                        <dd class="mt-2 text-sm text-gray-500">A Creative Product Development Team, that focuses on
+                            Design, Technology Development, & <span
+                                class=" text-transparent text-md bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-600">Creativity</span>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-black mt-10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mt-10 mb-8 transition">Projects</h2>
+            <div class="border-t border-gray-200 pt-4 mb-4"></div>
+
+            <!-- Rounded cards for projects -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition delay-300">
+                <!-- Project 1 card -->
+                <div class="bg-white rounded-md overflow-hidden hover:scale-105 mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                    <img src="images/spot.png" class="w-12 h-12 mb-2 flex items-right rounded-md mr-4">
+                    <h3 class="text-xl font-semibold mb-2">Spotify Resume</h3>
+                    <p class="text-gray-600">A Simplified Spotify application that leverages the Spotify API to
+                        dynamically retrieve artist & album information, playback individual tracks and more.</p>
+                    <div class="flex">
+                        <div class="rounded-md bg-red-300 hover:bg-red-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                            <p class="ml-3">UX</p>
+                        </div>
+                        <div class="rounded-md bg-green-300 hover:bg-green-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                            <p class="ml-3">API</p>
+                        </div>
+                        <div class="rounded-md bg-blue-300 hover:bg-blue-500 transition delay-50 text-white w-24 mt-8">
+                            <p class="ml-4">Frontend</p>
+                        </div>
+                        <div class="rounded-md bg-yellow-300 hover:bg-yellow-500 transition delay-50 text-white w-24 ml-2 mt-8">
+                            <p class="ml-4">Backend</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 card -->
+                <a href="https://cameron-eth.github.io/tesla-go/" class="">
+                    <div class="bg-white rounded-md hover:scale-105 overflow-hidden mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                        <img src="images/tesla.svg" class="w-12 h-12 flex items-right mb-2 rounded-md mr-4">
+                        <h3 class="text-xl font-semibold mb-2">Tesla Go</h3>
+                        <p class="text-gray-600">A Interactive Tesla Frontend application that allows users to track
+                            information about their tesla fleet, such as current driver, outstanding payment &
+                            revenue.</p>
+                        <div class="flex">
+                            <div class="rounded-md bg-red-300 hover:bg-red-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                                <p class="ml-3">UX</p>
+                            </div>
+                            <div class="rounded-md bg-blue-300 hover:bg-blue-500 transition delay-50 text-white w-24 mt-8">
+                                <p class="ml-4">Frontend</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3 card -->
+                <a href="https://cameron-eth.github.io/app-html/" class="">
+                    <div class="bg-white rounded-md hover:scale-105 overflow-hidden mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                        <img src="images/apple.svg" class="w-12 h-12 flex items-right mb-2 rounded-md mr-4">
+                        <h3 class="text-xl font-semibold mb-2">Apple TV +</h3>
+                        <p class="text-gray-600">An Apple TV Interface made as a clone of the current Apple website,
+                            Implemented a responsive design that mirrors the design language used by Apple.</p>
+                        <div class="flex">
+                            <div class="rounded-md bg-red-300 hover:bg-red-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                                <p class="ml-3">UX</p>
+                            </div>
+                            <div class="rounded-md bg-blue-300 hover:bg-blue-500 transition delay-50 text-white w-24 mt-8">
+                                <p class="ml-4">Frontend</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Add more project cards as needed -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal HTML structure -->
+    <div id="modal" class="modal">
+        <span id="close-modal" class="float-right cursor-pointer text-xl">&times;</span>
+        <div id="modal-content"></div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const underlinedWords = document.querySelectorAll('.role');
+
+            underlinedWords.forEach(function (word) {
+                word.addEventListener('click', function () {
+                    const role = word.innerText.trim();
+                    let content = '';
+
+                    // Define content for each role
+                    switch (role) {
+                        case 'Software Engineering Intern':
+                            content = 'As a Software Engineering Intern at Fingenic, I worked on various aspects of software development, gaining hands-on experience in building and maintaining software solutions. I collaborated with a dynamic team to contribute to the development of innovative features, conducted code reviews, and participated in agile development processes. This role allowed me to deepen my understanding of technologies such as Next.js, React.js, and Node.js, fostering my growth as a versatile and collaborative software engineer.';
+                            break;
+                        case 'UX/UI Intern':
+                            content = 'During my time as a UX/UI Intern at Runway Supply, I immersed myself in the world of user experience and interface design. I played a crucial role in crafting intuitive and visually appealing designs for digital products. Collaborating closely with cross-functional teams, I conducted user research, created wireframes and prototypes, and iteratively refined designs based on user feedback. This internship provided me with valuable insights into the intersection of design and user psychology, enhancing my skills in creating engaging and user-centric experiences.';
+                            break;
+                        // Add more cases as needed
+
+                        default:
+                            content = 'Default description for the role.';
+                    }
+
+                    // Display the modal with the role-specific content
+                    showModal(role, content);
+                });
+            });
+
+            // Close the modal when clicking the close button or overlay
+            document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('modal-overlay').addEventListener('click', closeModal);
+        });
+
+        // Function to display the modal
+        function showModal(title, content) {
+            const modal = document.getElementById('modal');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalContent = document.getElementById('modal-content');
+
+            // Set the title and content in the modal
+            modalContent.innerHTML = `<h2 class="text-xl font-bold mb-4">${title}</h2><p>${content}</p>`;
+
+            // Display the modal and overlay
+            modal.style.display = 'block';
+            modalOverlay.style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            const modalOverlay = document.getElementById('modal-overlay');
+
+            // Hide the modal and overlay
+            modal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
