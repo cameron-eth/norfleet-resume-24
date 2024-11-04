@@ -2,266 +2,294 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cameron Norfleet - Technical Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Cameron Norfleet</title>
+
+    <!-- Add modal styles (you can customize this further) -->
     <style>
-        :root {
-            --bg-color: #171717;
-            --text-color: #f3f4f6;
-            --accent-color: #fde047;
-            --link-color: #93c5fd;
-            --card-bg: #262626;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        header {
-            padding: 60px 0;
-        }
-        h1, h2, h3 {
-            margin-top: 0;
-        }
-        h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(to right, #a5b4fc, #ec4899);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .grid {
-            display: grid;
-            gap: 30px;
-        }
-        @media (min-width: 768px) {
-            .grid-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 20px;
-            transition: box-shadow 0.3s ease;
-        }
-        .card:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        .tag {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .role {
-            cursor: pointer;
-            color: var(--link-color);
-        }
-        .role:hover {
-            color: var(--accent-color);
-        }
         .modal {
             display: none;
             position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             z-index: 1000;
-            left: 0;
+        }
+
+        .light-green-bg {
+        background-color: lightgreen;
+        transition: background-color 1s ease;
+        }
+
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-        }
-        .modal-content {
-            background-color: var(--card-bg);
-            margin: 15% auto;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 500px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .close:hover {
-            color: var(--text-color);
+            z-index: 900;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Cameron's</h1>
-            <h2>Technical Portfolio</h2>
-            <p>Current Data Analytics Student @ San Jose State University, with explicit interest in Software Engineering, Product Design, Data, & UX/UI</p>
-            
-            <div class="grid grid-2">
-                <div>
-                    <h3>Work Experience</h3>
-                    <p>
-                        <span class="role" data-role="software-engineer">Software Engineering Intern</span>, Fingenic<br>
-                        <span class="role" data-role="ux-ui">UX/UI Intern</span>, Fingenic
-                    </p>
-                </div>
-                <div>
-                    <h3>Technologies</h3>
-                    <p>Next.js, Javascript, Tailwindcss, React.js, Typescript, Python, Node.js, Kaggle, SQL, Postgres</p>
-                    
-                    <h3>Interests</h3>
-                    <p>Product Analysis, Data Analysis, Product Development, Data Engineering, Data Science, Software Engineering.</p>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <main>
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="grid grid-3">
-                <div class="card">
-                    <h3>Spotify Resume *Desktop View*</h3>
-                    <p>A Simplified Spotify application that leverages the Spotify API to dynamically retrieve artist & album information, playback individual tracks and more.</p>
-                    <div>
-                        <span class="tag">UX</span>
-                        <span class="tag">API</span>
-                        <span class="tag">Frontend</span>
-                        <span class="tag">Backend</span>
-                    </div>
-                    <p><a href="https://vite-react-2.onrender.com/" target="_blank" rel="noopener noreferrer">View Project</a></p>
-                </div>
-                
-                <div class="card">
-                    <h3>Spotify Data Analysis Project</h3>
-                    <p>A Data Analysis Project that dives into the most popular spotify songs from the past decade, analyzes their key traits and similarities.</p>
-                    <div>
-                        <span class="tag">UX</span>
-                        <span class="tag">Data</span>
-                        <span class="tag">Backend</span>
-                    </div>
-                    <p><a href="https://www.kaggle.com/code/cameroneth/spotify-data-analysis" target="_blank" rel="noopener noreferrer">View Project</a></p>
-                </div>
-                
-                <div class="card">
-                    <h3>Tesla Go</h3>
-                    <p>A Interactive Tesla Frontend application that allows users to track information about their tesla fleet, such as current driver, outstanding payment & revenue.</p>
-                    <div>
-                        <span class="tag">UX</span>
-                        <span class="tag">Frontend</span>
-                    </div>
-                    <p><a href="https://cameron-eth.github.io/tesla-go/" target="_blank" rel="noopener noreferrer">View Project</a></p>
-                </div>
-                
-                <div class="card">
-                    <h3>Chicago Crime Data Study</h3>
-                    <p>A Comprehensive data analysis project analyzing crime patterns in the city of Chicago. Project features Data Modeling, Engineering, and Pipelining.</p>
-                    <div>
-                        <span class="tag">Data</span>
-                        <span class="tag">Analysis</span>
-                        <span class="tag">Data Visualization</span>
-                    </div>
-                    <p><a href="https://www.kaggle.com/code/cameroneth/chicago-crime" target="_blank" rel="noopener noreferrer">View Project</a></p>
-                </div>
-                
-                <div class="card">
-                    <h3>NFL Draft QB Data Analysis</h3>
-                    <p>A Comprehensive data analysis project analyzing & modeling data from the statistics and physical traits of the top QB prospects in this years NFL draft.</p>
-                    <div>
-                        <span class="tag">Data</span>
-                        <span class="tag">Analysis</span>
-                        <span class="tag">Mining</span>
-                    </div>
-                    <p><a href="https://www.kaggle.com/code/cameroneth/nfl-qb-draft-data-analysis" target="_blank" rel="noopener noreferrer">View Project</a></p>
-                </div>
-                
-                <div class="card">
-                    <h3>NFL Draft Predictive Model</h3>
-                    <p>A predictive model for forecasting the success of quarterback prospects by analyzing and weighting key statistics. It will identify and rank the top prospects.</p>
-                    <div>
-                        <span class="tag">Data</span>
-                        <span class="tag">Modeling</span>
-                        <span class="tag">Analysis</span>
-                    </div>
-                    <p><a href="https://www.kaggle.com/code/cameroneth/nfl-draft-qb-data-modeling" target="_blank" rel="noopener noreferrer">View Project</a></p>
-                </div>
-            </div>
-        </div>
-    </main>
+<body class="bg-neutral-900	 cursor-default">
 
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="modal-title"></h3>
-            <p id="modal-description"></p>
+    <div class="bg-neutral-900	 cursor-default">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-3xl sm:mb-12 lg:mb-12 lg:px-8">
+            <div>
+                <h2 class="font-bold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-indigo-200 to-pink-600">Cameron's</h2>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl lg:item">Technical Portfolio</h2>
+                <p class="mt-4 text-gray-500">Current Data Analytics Student @ San Jose State University, with explicit
+                    interest in Software Engineering, Product Design, Data, & UX/UI </p>
+                <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-200 hover:text-yellow-300">Work Experience</dt>
+                        <dd class="mt-2 text-sm text-gray-500">
+                            <span class="text-blue-200 underline hover:text-yellow-300 role"
+                                data-content="As a Software Engineering Intern at Fingenic, I worked on various aspects of software development, gaining hands-on experience in building and maintaining software solutions. I collaborated with a dynamic team to contribute to the development of innovative features, conducted code reviews, and participated in agile development processes. This role allowed me to deepen my understanding of technologies such as Next.js, React.js, and Node.js, fostering my growth as a versatile and collaborative software engineer.">Software Engineering
+                                Intern</span>,
+                            Fingenic. <br>
+                            <span class="underline text-blue-200 hover:text-yellow-300 role"
+                                data-content="During my time as a UX/UI Intern at Runway Supply, I immersed myself in the world of user experience and interface design. I played a crucial role in crafting intuitive and visually appealing designs for digital products. Collaborating closely with cross-functional teams, I conducted user research, created wireframes and prototypes, and iteratively refined designs based on user feedback. This internship provided me with valuable insights into the intersection of design and user psychology, enhancing my skills in creating engaging and user-centric experiences.">UX/UI Intern</span>, Fingenic. </dd>
+                        <br>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-100 hover:text-yellow-300">Technologies</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Next.js, Javascript, Tailwindcss, React.js,
+                            Typescript, Python, Node.js, Kaggle, SQL, Postgres</dd>
+                    </div>
+
+                     <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-100 hover:text-yellow-300">Interests</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Product Analysis, Data Analysis, Product Development, Data Engineering, Data Science, Software Engineering.</dd>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt
+                            class="font-medium text-transparent text-md bg-clip-text bg-gradient-to-r from-indigo-200 to-pink-600 ">
+                            Hommefleur</dt>
+                        <dd class="mt-2 text-sm text-gray-500">A Creative Product Development Team, that focuses on
+                            Design, Technology Development, & <span
+                                class=" text-transparent text-md bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-600">Creativity</span>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
         </div>
     </div>
 
+    <section class="bg-neutral-900 mt-10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mt-10 mb-8 transition">Projects</h2>
+            <div class="border-t border-gray-200 pt-4 mb-4"></div>
+
+            <!-- Rounded cards for projects -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition delay-300">
+
+                <a href="https://vite-react-2.onrender.com/" class="">
+                    <div class="bg-white cursor-default rounded-md overflow-hidden hover:scale-105 mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                    <img src="images/spot.png" class="w-12 h-12 mb-2 flex items-right rounded-md mr-4">
+                    <h3 class="text-xl font-semibold mb-2">Spotify Resume *Desktop View*</h3>
+                    <p class="text-gray-600">A Simplified Spotify application that leverages the Spotify API to
+                        dynamically retrieve artist & album information, playback individual tracks and more.</p>
+                    <div class="flex">
+                        <div class="rounded-md bg-red-300 hover:bg-red-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                            <p class="ml-3">UX</p>
+                        </div>
+                        <div class="rounded-md bg-green-300 hover:bg-green-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                            <p class="ml-3">API</p>
+                        </div>
+                        <div class="rounded-md bg-blue-300 hover:bg-blue-500 transition delay-50 text-white w-24 mt-8">
+                            <p class="ml-4">Frontend</p>
+                        </div>
+                        <div class="rounded-md bg-yellow-300 hover:bg-yellow-500 transition delay-50 text-white w-24 ml-2 mt-8">
+                            <p class="ml-4">Backend</p>
+                        </div>
+                    </div>
+                    </div>
+                </a>
+            <!-- Rounded cards for projects -->
+                <a href="https://www.kaggle.com/code/cameroneth/spotify-data-analysis" class="">
+                    <div class="bg-white cursor-default rounded-md overflow-hidden hover:scale-105 mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                    <img src="images/spot.png" class="w-12 h-12 mb-2 flex items-right rounded-md mr-4">
+                    <h3 class="text-xl font-semibold mb-2">Spotify Data Analysis Project</h3>
+                    <p class="text-gray-600">A Data Analysis Project that dives into the most popular spotify songs from the past decade, analyzes their key traits and similarities.</p>
+                    <div class="flex">
+                        <div class="rounded-md bg-red-300 hover:bg-red-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                            <p class="ml-3">UX</p>
+                        </div>
+                        <div class="rounded-md bg-indigo-300 hover:bg-indigo-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                                <p class="pl-2 mr-2">Data</p>                            </div>
+                        <div class="rounded-md bg-yellow-300 hover:bg-yellow-500 transition delay-50 text-white w-24 ml-2 mt-8">
+                            <p class="ml-4">Backend</p>
+                        </div>
+                    </div>
+                    </div>
+                </a>
+
+
+                <!-- Project 2 card -->
+                <a href="https://cameron-eth.github.io/tesla-go/" class="">
+                    <div class="bg-white cursor-default hover:scale-105 overflow-hidden rounded-md mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                        <img src="images/tesla.svg" class="w-12 h-12 flex items-right mb-2 rounded-md mr-4">
+                        <h3 class="text-xl font-semibold mb-2">Tesla Go</h3>
+                        <p class="text-gray-600">A Interactive Tesla Frontend application that allows users to track
+                            information about their tesla fleet, such as current driver, outstanding payment &
+                            revenue.</p>
+                        <div class="flex">
+                            <div class="rounded-md bg-red-300 hover:bg-red-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                                <p class="ml-3">UX</p>
+                            </div>
+                            <div class="rounded-md bg-blue-300 hover:bg-blue-500 transition delay-50 text-white w-24 mt-8">
+                                <p class="ml-4">Frontend</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Project 3 card -->
+                <a href="https://www.kaggle.com/code/cameroneth/chicago-crime" class="">
+                    <div class="bg-white cursor-default rounded-md hover:scale-105 overflow-hidden mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                        <img src="images/crime.png" class="w-12 h-12 flex items-right mb-2 rounded-md mr-4">
+                        <h3 class="text-xl font-semibold mb-2">Chicago Crime Data Study</h3>
+                        <p class="text-gray-600">A Comprehensive data analysis project analyzing crime patterns in the city of Chicago. Project features Data Modeling, Engineering, and Pipelining.</p>
+                        <div class="flex">
+                            <div class="rounded-md bg-indigo-300 hover:bg-indigo-500 transition delay-50 text-white w-12 mt-8 mr-2">
+                                <p class="pl-2 mr-2">Data</p>                            </div>
+                            <div class="rounded-md bg-cyan-300 hover:bg-cyan-500 transition delay-50 text-white w-24 mt-8">
+                                <p class="ml-4 mr-3">Analysis</p>
+                            </div>
+                            <div class="rounded-md ml-2 bg-emerald-300 hover:bg-emerald-500 transition delay-50 text-white w-30 mt-8 mr-2">
+                                <p class="pl-2 mr-1">Data Visualization</p>                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Project 4 card -->
+                <a href="https://www.kaggle.com/code/cameroneth/nfl-qb-draft-data-analysis" class="">
+                    <div class="bg-white cursor-default rounded-md hover:scale-105 overflow-hidden mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                        <img src="images/football.png" class="w-12 h-12 flex items-right mb-2 rounded-md mr-4">
+                        <h3 class="text-xl font-semibold mb-2">NFL Draft QB Data Analysis</h3>
+                        <p class="text-gray-600">A Comprehensive data analysis project analyzing & modeling data from the statistics and physical traits of the top QB prospects in this years NFL draft. </p>
+                        <div class="flex">
+                            <div class="rounded-md bg-indigo-300 hover:bg-indigo-500 transition delay-50 h-6  text-white w-12 mt-8 mr-2">
+                                <p class="pl-2 mr-2">Data</p>                            </div>
+                            <div class="rounded-md bg-cyan-300 hover:bg-cyan-500 transition delay-50 text-white h-6  w-24 mt-8">
+                                <p class=" mr-3 ml-4">Analysis</p>
+                            </div>
+                            <div class="rounded-md ml-2 bg-emerald-700 hover:bg-emerald-500 transition delay-50 w-20 h-6 text-white  mt-8 mr-2">
+                                <p class=" ml-4">Mining</p>  
+                            </div>
+                        </div>
+                        
+                    </div>
+                </a>
+                
+                <!-- Project 5 card -->
+                <a href="https://www.kaggle.com/code/cameroneth/nfl-draft-qb-data-modeling" class="">
+                    <div class="bg-white cursor-default rounded-md hover:scale-105 overflow-hidden mb-2 transition delay-50 shadow-md p-6 hover:border-blue-400 border-transparent border-4">
+                        <img src="images/football.png" class="w-12 h-12 flex items-right mb-2 rounded-md mr-4">
+                        <h3 class="text-xl font-semibold mb-2">NFL Draft Predictive Model</h3>
+                        <p class="text-gray-600">A predictive model for forecasting the success of quarterback prospects by analyzing and weighting key statistics. It will identify and rank the top prospects.</p>
+                        <div class="flex">
+                            <div class="rounded-md bg-indigo-300 hover:bg-indigo-500 transition delay-50 h-6  text-white w-12 mt-8 mr-2">
+                                <p class="pl-2 mr-2">Data</p>                            </div>
+                                <div class="rounded-md bg-amber-500 hover:bg-amber-700 transition delay-50 h-6 text-white w-20 mt-8 mr-2">
+                                    <p class="pl-2 mr-2">Modeling</p>                            </div>
+                            <div class="rounded-md bg-cyan-300 hover:bg-cyan-500 transition delay-50 text-white h-6  w-20 mt-8">
+                                <p class=" mr-3 ml-3">Analysis</p>
+                            </div>
+                        
+                        </div>
+                        
+                    </div>
+                </a>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal HTML structure -->
+    <div id="modal" class="modal">
+        <span id="close-modal" class="float-right cursor-default text-xl">&times;</span>
+        <div id="modal-content"></div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay"></div>
+
     <script>
-        const modal = document.getElementById('modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.getElementById('modal-description');
-        const closeBtn = document.getElementsByClassName('close')[0];
+        document.addEventListener('DOMContentLoaded', function () {
+            const underlinedWords = document.querySelectorAll('.role');
 
-        const roles = {
-            'software-engineer': {
-                title: 'Software Engineering Intern',
-                description: 'As a Software Engineering Intern at Fingenic, I worked on various aspects of software development, gaining hands-on experience in building and maintaining software solutions. I collaborated with a dynamic team to contribute to the development of innovative features, conducted code reviews, and participated in agile development processes. This role allowed me to deepen my understanding of technologies such as Next.js, React.js, and Node.js, fostering my growth as a versatile and collaborative software engineer.'
-            },
-            'ux-ui': {
-                title: 'UX/UI Intern',
-                description: 'During my time as a UX/UI Intern at Runway Supply, I immersed myself in the world of user experience and interface design. I played a crucial role in crafting intuitive and visually appealing designs for digital products. Collaborating closely with cross-functional teams, I conducted user research, created wireframes and prototypes, and iteratively refined designs based on user feedback. This internship provided me with valuable insights into the intersection of design and user psychology, enhancing my skills in creating engaging and user-centric experiences.'
-            }
-        };
+            underlinedWords.forEach(function (word) {
+                word.addEventListener('click', function () {
+                    const role = word.innerText.trim();
+                    let content = '';
 
-        document.querySelectorAll('.role').forEach(role => {
-            role.addEventListener('click', function() {
-                const roleInfo = roles[this.dataset.role];
-                modalTitle.textContent = roleInfo.title;
-                modalDescription.textContent = roleInfo.description;
-                modal.style.display = 'block';
+                    // Define content for each role
+                    switch (role) {
+                        case 'Software Engineering Intern':
+                            content = 'As a Software Engineering Intern at Fingenic, I worked on various aspects of software development, gaining hands-on experience in building and maintaining software solutions. I collaborated with a dynamic team to contribute to the development of innovative features, conducted code reviews, and participated in agile development processes. This role allowed me to deepen my understanding of technologies such as Next.js, React.js, and Node.js, fostering my growth as a versatile and collaborative software engineer.';
+                            break;
+                        case 'UX/UI Intern':
+                            content = 'During my time as a UX/UI Intern at Runway Supply, I immersed myself in the world of user experience and interface design. I played a crucial role in crafting intuitive and visually appealing designs for digital products. Collaborating closely with cross-functional teams, I conducted user research, created wireframes and prototypes, and iteratively refined designs based on user feedback. This internship provided me with valuable insights into the intersection of design and user psychology, enhancing my skills in creating engaging and user-centric experiences.';
+                            break;
+                        // Add more cases as needed
+
+                        default:
+                            content = 'Default description for the role.';
+                    }
+
+                    // Display the modal with the role-specific content
+                    showModal(role, content);
+                });
             });
+
+            // Close the modal when clicking the close button or overlay
+            document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('modal-overlay').addEventListener('click', closeModal);
         });
 
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
+        // Function to display the modal
+        function showModal(title, content) {
+            const modal = document.getElementById('modal');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalContent = document.getElementById('modal-content');
+
+            // Set the title and content in the modal
+            modalContent.innerHTML = `<h2 class="text-xl font-bold mb-4">${title}</h2><p>${content}</p>`;
+
+            // Display the modal and overlay
+            modal.style.display = 'block';
+            modalOverlay.style.display = 'block';
         }
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            const modalOverlay = document.getElementById('modal-overlay');
+
+            // Hide the modal and overlay
+            modal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+
+            
         }
     </script>
+
 </body>
+
 </html>
